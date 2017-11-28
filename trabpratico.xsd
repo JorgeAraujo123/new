@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    
+    <xs:element name="trabpratico">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="epocas" type="epocas"/>
+                <xs:element name="curso" type="curso" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType> 
+    </xs:element> 
+
+    <xs:complexType name="epocas">
+        <xs:sequence maxOccurs="unbounded">
+            <xs:element name="epoca" type="epoca"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="epoca">
+        <xs:sequence>
+            <xs:element name="datainicio" type="xs:date"/>
+            <xs:element name="datafim" type="xs:date"/>
+        </xs:sequence>
+        <xs:attribute name="nome" type="nomeEpoca"/>
+    </xs:complexType>
+    
+    <xs:simpleType name="nomeEpoca">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Normal"/>
+            <xs:enumeration value="Especial"/>
+            <xs:enumeration value="Recurso"/>
+        </xs:restriction>
+    </xs:simpleType>    
+    
+    <xs:complexType name="curso">
+        <xs:sequence>
+            <xs:element name="nomecurso" type="xs:string"/>
+            <xs:element name="codigo" type="xs:int"/>
+            <xs:element name="coordenador" type="coordenador"/>
+            <xs:element name="ucs" type="ucs"/>
+        </xs:sequence>
+        <xs:attribute name="nivel" type="nivel"/>
+    </xs:complexType>
+    
+    <xs:simpleType name="nivel">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CTESP"/>
+            <xs:enumeration value="Licenciatura"/>
+            <xs:enumeration value="Mestrado"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="coordenador">
+        <xs:sequence>
+            <xs:element name="nome" type="xs:string"/>
+            <xs:element name="codigocoordenador" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>    
+    <xs:complexType name="ucs">
+        <xs:sequence maxOccurs="unbounded">
+            <xs:element name="uc" type="uc"/>
+        </xs:sequence>
+    </xs:complexType>    
+    
+    <xs:complexType name="uc">
+        <xs:sequence>
+            <xs:element name="nomedisciplina" type="xs:string"/>
+            <xs:element name="area" type="area"/>
+            <xs:element name="anocurricular" type="xs:gYear"/>
+            <xs:element name="semestre" type="semestre"/>
+            <xs:element name="regente" type="regente"/>
+            <xs:element name="tipologia" type="tipologia"/>
+            <xs:element name="exames" type="exames"/>
+        </xs:sequence>
+        <xs:attribute name="codigo" type="xs:int"/>
+    </xs:complexType>    
+    
+    <xs:simpleType name="area">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Informática"/>
+            <xs:enumeration value="Ciências"/>
+            <xs:enumeration value="Matemática"/>
+            <xs:enumeration value="Linguas"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="semestre">
+        <xs:restriction base="xs:integer">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+        </xs:restriction>
+    </xs:simpleType>    
+    
+    <xs:complexType name="regente">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="cod" type="xs:string"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    
+    <xs:simpleType name="tipologia">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="T"/>
+            <xs:enumeration value="TP"/>
+            <xs:enumeration value="PL"/>
+            <xs:enumeration value="OT"/>
+        </xs:restriction>
+    </xs:simpleType>    
+    
+    <xs:complexType name="exames">
+        <xs:sequence maxOccurs="3">
+            <xs:element name="exame" type="ex"/>
+        </xs:sequence>
+    </xs:complexType>    
+    
+    <xs:complexType name="ex">
+        <xs:sequence>
+            <xs:element name="epoca" type="xs:string"/>
+            <xs:element name="sala" type="sala"/>
+            <xs:element name="data" type="xs:date"/>
+            <xs:element name="horas" type="horas"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="sala">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Informática"/>
+            <xs:enumeration value="Normal"/>
+        </xs:restriction>
+    </xs:simpleType>    
+    
+    <xs:complexType name="horas">
+        <xs:sequence>
+            <xs:element name="duracao" type="duracao"/>
+            <xs:element name="horainicio" type="xs:time"/>
+        </xs:sequence>
+    </xs:complexType>    
+    
+    <xs:simpleType name="duracao">
+        <xs:restriction base="xs:int">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+        </xs:restriction>   
+    </xs:simpleType>    
+    
+</xs:schema>

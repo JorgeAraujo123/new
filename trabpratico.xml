@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trabpratico xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="trabpratico.xsd">
+    <epocas>
+        <epoca nome="Normal">
+           <datainicio>2018-01-16</datainicio>
+           <datafim>2018-01-30</datafim>
+        </epoca>
+        <epoca nome="Recurso">
+            <datainicio>2018-02-14</datainicio>
+            <datafim>2018-02-24</datafim>
+        </epoca>
+        <epoca nome="Especial">
+            <datainicio>2016-09-03</datainicio>
+            <datafim>2016-09-15</datafim>
+        </epoca>
+    </epocas>
+    
+    <curso nivel="Licenciatura">
+        <nomecurso>LSIRC</nomecurso>
+        <codigo>2</codigo>
+        <coordenador>
+            <nome>Joao Paulo</nome>
+            <codigocoordenador>JPM</codigocoordenador>
+        </coordenador>
+        <ucs>
+            <uc codigo="2">
+                <nomedisciplina>PEI</nomedisciplina>
+                <area>Matemática</area>
+                <anocurricular>2018</anocurricular>
+                <semestre>1</semestre>
+                <regente cod="bmo">Bruno</regente>
+                <tipologia>T</tipologia>
+                <exames>
+                    <exame>
+                        <epoca>Normal</epoca>
+                        <sala>Normal</sala>
+                        <data>2018-01-25</data>
+                        <horas>
+                            <duracao>2</duracao>
+                            <horainicio>10:20:00</horainicio>
+                        </horas>
+                    </exame>
+                </exames>
+            </uc>
+            <uc codigo="3">
+                <nomedisciplina>AFD</nomedisciplina>
+                <area>Informática</area>
+                <anocurricular>2018</anocurricular>
+                <semestre>1</semestre>
+                <regente cod="aop">António</regente>
+                <tipologia>TP</tipologia>
+                <exames>
+                    <exame>
+                        <epoca>Normal</epoca>
+                        <sala>Normal</sala>
+                        <data>2018-01-25</data>
+                        <horas>
+                            <duracao>2</duracao>
+                            <horainicio>17:20:00</horainicio>
+                        </horas>
+                    </exame>
+                </exames>
+            </uc>
+        </ucs>
+    </curso>
+    
+    <curso nivel="Licenciatura">
+        <nomecurso>LEI</nomecurso>
+        <codigo>2</codigo>
+        <coordenador>
+            <nome>Ricardo Santos</nome>
+            <codigocoordenador>RS</codigocoordenador>
+        </coordenador>
+        <ucs>
+            <uc codigo="4">
+                <nomedisciplina>FA</nomedisciplina>
+                <area>Ciências</area>
+                <anocurricular>2018</anocurricular>
+                <semestre>1</semestre>
+                <regente cod="JS">José</regente>
+                <tipologia>TP</tipologia>
+                <exames>
+                    <exame>
+                         <epoca>Normal</epoca>
+                         <sala>Normal</sala>
+                         <data>2018-01-20</data>
+                         <horas>
+                             <duracao>2</duracao>
+                             <horainicio>14:00:00</horainicio>
+                         </horas>
+                    </exame>
+                </exames>
+            </uc>
+        </ucs>
+    </curso>
+</trabpratico>
